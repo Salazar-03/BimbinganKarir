@@ -36,12 +36,12 @@
                                     <option>Minggu</option>
                                 </select>
                             </div>
-
+                        <!-- Form Group untuk input jam mulai -->
                             <div class="mb-3 form-group">
                                 <label for="jamMulai">Jam Mulai</label>
                                 <input type="time" class="form-control" id="jamMulai" name="jam_mulai" >
                             </div>
-
+                        <!-- Form Group untuk input jam selesai -->
                             <div class="mb-4 form-group">
                                 <label for="jamSelesai">Jam Selesai</label>
                                 <input type="time" class="form-control" id="jamSelesai" name="jam_selesai">

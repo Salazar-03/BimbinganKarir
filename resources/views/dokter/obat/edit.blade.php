@@ -1,4 +1,3 @@
-edit
 <!-- resources/views/obat/edit-dummy.blade.php -->
 <x-app-layout>
     <x-slot name="header">

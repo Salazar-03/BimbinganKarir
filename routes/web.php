@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
         })->name('dokter.dashboard');
 
         Route::prefix('obat')->group(function () {
+            //route navigasi obat
             Route::get('/', [ObatController::class, 'index'])->name('dokter.obat.index');
             Route::get('/create', [ObatController::class, 'create'])->name('dokter.obat.create');
             Route::post('/store', [ObatController::class, 'store'])->name('dokter.obat.store');
@@ -41,6 +42,7 @@ Route::prefix('jadwal-periksa')->group(function () {
             Route::get('/create', [JadwalPeriksaController::class, 'create'])->name('dokter.jadwal-periksa.create');
             Route::post('/store', [JadwalPeriksaController::class, 'store'])->name('dokter.jadwal-periksa.store');
             // Route::get('/edit/{id}', [JadwalPeriksaController::class, 'edit'])->name('dokter.jadwal.edit');
+            //route jadwal periksa
             Route::patch('/{id}', [JadwalPeriksaController::class, 'update'])->name('dokter.jadwal-periksa.update');
             Route::delete('/destroy/{id}', [JadwalPeriksaController::class, 'destroy'])->name('dokter.jadwal-periksa.destroy');
         });
