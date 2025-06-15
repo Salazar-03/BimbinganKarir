@@ -32,4 +32,10 @@ class JanjiPeriksa extends Model
     {
         return $this->hasOne(Periksa::class, 'id_janji_periksa');
     }
+
+    public function poli()
+    {
+        return $this->belongsTo(Poli::class, 'id_poli');
+    }
+
 }

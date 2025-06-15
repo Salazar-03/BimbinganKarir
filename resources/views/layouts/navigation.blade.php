@@ -16,15 +16,24 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dokter.jadwal-periksa.index')" :active="request()->routeIs('dokter.jadwal-periksa.*')">
+                <x-nav-link :href="route('dokter.jadwal-periksa.index')" :active="request()->routeIs('dokter.jadwal-periksa.*')">
                          {{ __('Jadwal Periksa') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dokter.obat.index')" :active="request()->routeIs('dokter.obat.*')">
+                </x-nav-link>
+                <x-nav-link :href="route('dokter.memeriksa.index')" :active="request()->routeIs('dokter.memeriksa.*')">
+                         {{ __('Manajemen Periksa') }}
+                </x-nav-link>
+                <x-nav-link :href="route('dokter.obat.index')" :active="request()->routeIs('dokter.obat.*')">
                          {{ __('Obat') }}
-                    </x-nav-link>
+                </x-nav-link>
                  @else
                   <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('pasien.janji-periksa.index')" :active="request()->routeIs('dokter.janji-periksa')">
+                        {{ __('Janji Periksa') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('pasien.riwayat-periksa.index')" :active="request()->routeIs('dokter.riwayat-periksa')">
+                        {{ __('Riwayat Periksa') }}
                     </x-nav-link>
                     @endif
                 </div>

@@ -47,7 +47,7 @@
                                 <input type="time" class="form-control" id="jamSelesai" name="jam_selesai">
                             </div>
 
-                            <a type="button" href="#" class="btn btn-secondary">
+                            <a type="button" href="{{ route('dokter.jadwal-periksa.index') }}" class="btn btn-secondary">
                                 Batal
                             </a>
                             <button type="submit" class="btn btn-primary">

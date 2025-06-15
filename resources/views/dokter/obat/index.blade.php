@@ -14,9 +14,17 @@
                         <h2 class="text-lg font-medium text-gray-900">
                             {{ __('Daftar Obat') }}
                         </h2>
-                        <a href="{{ route('dokter.obat.create') }}" class="btn btn-primary">
-                            Tambah Obat
-                        </a>
+                        <div class="flex-col items-center justify-center text-center">
+                            <a href="{{route('dokter.obat.create')}}" class="btn btn-primary">Tambah Obat</a>
+                            <a href="{{ route('dokter.obat.trash') }}" class="btn btn-danger">Lihat Obat Terhapus</a>
+
+
+                            @if (session('status') === 'obat-created')
+                            <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
+                                class="text-sm text-gray-600">{{ __('Created.') }}</p>
+                            @endif
+                        </div>
+
                     </header>
 
                     <table class="table mt-6 overflow-hidden rounded table-hover w-full">
@@ -68,7 +76,8 @@
         Swal.fire({
             icon: 'success',
             title: 'Berhasil',
-            text: '{{ session('success') }}',
+            text: '{{ session('
+            success ') }}',
             confirmButtonColor: '#3085d6',
         });
     </script>
@@ -76,16 +85,16 @@
 
     {{-- Notifikasi Error Validasi --}}
     @if ($errors->any())
-        @php
-            $errorMessages = implode(' ', $errors->all());
-        @endphp
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Terjadi Kesalahan',
-                html: `{!! nl2br(e($errorMessages)) !!}`,
-                confirmButtonColor: '#d33',
-            });
-        </script>
+    @php
+    $errorMessages = implode(' ', $errors->all());
+    @endphp
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Terjadi Kesalahan',
+            html: {!! nl2br(e($errorMessages)) !!},
+            confirmButtonColor: '#d33',
+        });
+    </script>
     @endif
-</x-app-layout>
+</x-app-layout> 
